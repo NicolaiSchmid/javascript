@@ -12,3 +12,12 @@ install:
 script:
   - 'npm test'
   - 'npm run lint'
+
+deploy:
+  provider: npm
+  email: $NPM_EMAIL
+  skip_cleanup: true
+  api_key: $NPM_TOKEN
+  on:
+    branch: master
+    tags: true
